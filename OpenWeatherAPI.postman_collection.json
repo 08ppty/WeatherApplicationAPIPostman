@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "db9a0931-6300-4ce1-b5c2-42c0c0bafaa8",
+		"name": "OpenWeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715334",
+		"_collection_link": "https://lunar-satellite-537194.postman.co/workspace/PHASE3____~02f2c00c-80fc-4e01-a0cc-d6fb0308822d/collection/31715334-db9a0931-6300-4ce1-b5c2-42c0c0bafaa8?action=share&source=collection_link&creator=31715334"
+	},
+	"item": [
+		{
+			"name": "GetCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{Base_URL}weather?lat=44.34&lon=10.99&dssd=f461e52e028a54b147e8563a5433c389",
+					"host": [
+						"{Base_URL}weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "44.34"
+						},
+						{
+							"key": "lon",
+							"value": "10.99"
+						},
+						{
+							"key": "dssd",
+							"value": "f461e52e028a54b147e8563a5433c389"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCIty",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetCityByByName",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"City\",\"Hyderabad\");  // environment variables\r",
+							"pm.globals.set(\"global_var1\",\"global-1\");  //global variables"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}weather?id={{City}}&appid={{apikey}}",
+					"host": [
+						"{{Base_URL}}weather"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{City}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLanguage",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "demouser23s@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tutorialsninja.com/demo/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"tutorialsninja",
+						"com"
+					],
+					"path": [
+						"demo",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						},
+						{
+							"key": "email",
+							"value": "demouser23s@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{value}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "{{key}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "value",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "key",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "in",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "apikey",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
